@@ -23,7 +23,7 @@ body {
 
 .main {
   display: grid;
-  grid-template-columns: repeat(var(--colum-count), 200px);
+  grid-template-columns: repeat(var(--colum-count), $card_width);
   gap: 46px 48px;
   justify-content: center;
   padding: 50px 40px;
@@ -77,7 +77,7 @@ body {
 
   transition:
     transform 0.3s ease,
-    background 0.3s ease,
+    background-color 0.3s ease,
     border 0.3s ease,
     color 0.3s ease;
 
@@ -157,6 +157,11 @@ body {
     font-size: 14px;
     text-decoration: none;
 
+    transition:
+      background-color 0.3s ease,
+      border 0.3s ease,
+      color 0.3s ease;
+
     &:hover {
       background-color: $tx_color;
       border: 1px solid $bg_button;
@@ -166,11 +171,11 @@ body {
 
   &:hover {
     transform: scale(1.2);
-
-    & .card__info {
-      color: #34568b;
-    }
   }
+}
+
+.card:hover .card__title {
+  color: #34568b;
 }
 
 .header {
@@ -182,23 +187,7 @@ body {
   box-sizing: border-box;
 }
 
-.link {
-  color: #060b35;
-  display: flex;
-  align-items: center;
-  height: $header_height;
-  text-transform: uppercase;
-
-  &:hover {
-    color: $blue-color;
-  }
-
-  &:link {
-    text-decoration: none;
-  }
-}
-
-.ul {
+.menu {
   display: flex;
   margin: 0;
   padding: 0;
@@ -208,7 +197,7 @@ body {
     margin-right: 20px;
   }
 
-  .first {
+  &__first {
     position: relative;
 
     .is-active {
@@ -231,5 +220,22 @@ body {
       background: $blue-color;
       border-radius: 2px;
     }
+  }
+}
+
+.menu__link,
+.header__link {
+  color: #060b35;
+  display: flex;
+  align-items: center;
+  height: $header_height;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $blue-color;
+  }
+
+  &:link {
+    text-decoration: none;
   }
 }
