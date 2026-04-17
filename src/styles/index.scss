@@ -26,7 +26,7 @@ body {
   grid-template-columns: repeat(var(--colum-count), 200px);
   gap: 46px 48px;
   justify-content: center;
-  padding-top: 50px;
+  padding: 50px 40px;
 }
 
 @media (min-width: 488px) {
@@ -75,7 +75,11 @@ body {
   border-radius: 5px;
   border: 1px solid #f3f3f3;
 
-  transition: transform 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border 0.3s ease,
+    color 0.3s ease;
 
   &__content {
     display: block;
@@ -87,7 +91,7 @@ body {
     width: 160px;
   }
 
-  &__info {
+  &__title {
     font-weight: 500;
     font-size: 12px;
     line-height: 18px;
@@ -184,6 +188,7 @@ body {
   align-items: center;
   height: $header_height;
   text-transform: uppercase;
+  transition: color 0.3s;
 
   &:hover {
     color: $blue-color;
