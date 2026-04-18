@@ -1,7 +1,4 @@
 body {
-
-  -webkit-font-smoothing: antialiased;
-
   min-height: 100vh;
 
   --colum-count: 1;
@@ -168,6 +165,7 @@ body {
   border: 1px solid rgb(0, 172, 220);
   color: rgb(0, 172, 220);
 }
+
 .card:hover {
   transform: scale(1.2);
 }
